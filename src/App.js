@@ -126,22 +126,28 @@ function UserInput() {
 
 function GameData() {
   const tabledata = useSelector(state => state.APIresults);
-  
+  const offset = 0;
+  const length = 0;
 
 console.log(tabledata);
+
+
 
 //console.log("333 "+tabledata.isArray)
 try{
  return (
-    <section>
+  <section>
       <h2>Game Results</h2>
-      <p>
-        {tabledata && tabledata.map(({ tabledatar, offset, length }) => {
-          const subtext = tabledatar[offset];
-          
-          return <span key={offset} >d{subtext} </span>;
-        })}
-      </p>
+      {tabledata &&
+        <table><tbody><tr><td>Player1 (score)</td><td>Player2 (score)</td></tr>
+          {tabledata.map((tabledat, index) => (
+			<tr key={tabledat.id}>
+            <td >{tabledat.p1name} ({tabledat.p1score})</td>
+			<td >{tabledat.p2name} (Score: {tabledat.p2score})</td>
+			</tr>
+          ))}
+        </tbody></table>
+      }
     </section>
   );
   
