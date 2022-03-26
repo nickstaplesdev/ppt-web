@@ -1,0 +1,59 @@
+body {
+  background-color: #f7f7f7;
+}
+
+.app {
+  display: grid;
+  gap: 1em;
+  width: 40em;
+  margin: 2em;
+}
+
+.app section {
+  display: grid;
+  gap: 1em;
+
+  background-color: #fff;
+  padding: 1em;
+  box-shadow: 0px 2px 6px 2px #0002;
+}
+
+.app section > * {
+  margin: 0;
+}
+
+.app button {
+  background: #17f;
+  color: #fff;
+  font: inherit;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  padding: 0.5em 1.5em;
+}
+
+.app button:active {
+  background-color: #05b;
+}
+
+.app textarea {
+  border: 1px solid #999;
+  border-radius: 3px;
+  font: inherit;
+  padding: 0.5em;
+  outline: none;
+  height: 10ex;
+}
+
+.app textarea:focus {
+  outline: auto #17f;
+}
+
+.app .results {
+  display: grid;
+  grid-auto-flow: column;
+}
+
+.app .results > section {
+  align-content: baseline;
+}
